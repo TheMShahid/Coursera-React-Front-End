@@ -10,6 +10,7 @@ import HeaderComponent from "./HeaderComponent";
 import Contact from "./ContactComponent";
 import Footer from "./FooterComponent";
 import Home from "./HomeComponent";
+import About from "./AboutComponent";
 
 class Main extends React.Component {
   constructor(props) {
@@ -49,6 +50,10 @@ class Main extends React.Component {
       );
     };
 
+    const AboutUsPage = () => {
+      return <About leaders={this.state.leaders} />;
+    };
+
     return (
       <div>
         <HeaderComponent />
@@ -61,6 +66,7 @@ class Main extends React.Component {
           />
           <Route path="/menu/:dishId" component={DishWithId} />
           <Route path="/contactus" exact component={Contact} />
+          <Route path="/aboutus" exact component={AboutUsPage} />
           <Redirect to="/home" />
         </Switch>
         <Footer />
